@@ -28,7 +28,7 @@ public class EmployeeController {
         //2根据页面提交的用户名查询数据库
         LambdaQueryWrapper<Employee> employeeLambdaQueryWrapper = new LambdaQueryWrapper<>();
         employeeLambdaQueryWrapper.eq(Employee::getUsername,employee.getUsername());
-        Employee one = employeeService.getOne(employeeLambdaQueryWrapper);
+        Employee one = employeeService.getOne(employeeLambdaQueryWrapper);//getone获取符合条件的一条数据对象
         //3如果没有查询到返回错误结果
         if(one==null){
             return R.error("登录失败");
